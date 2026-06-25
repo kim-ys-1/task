@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Play Ground - signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '맑은 고딕', 돋움, sans-serif;
+        }
+
+        body {
+            background-color: #F3EFE0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .ac {
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            border-radius: 40px; 
+            box-shadow: 0 10px 30px rgba(74, 53, 37, 0.05);
+            padding: 50px 40px;
+            border: 2px solid #4A3525; 
+        }
+
+        .ah {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .ah h1 {
+            font-size: 42px;
+            color: #E97424; 
+            font-style: italic;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .ah p {
+            font-size: 16px;
+            color: #4A3525;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        .fg {
+            margin-bottom: 20px;
+        }
+
+        .fg label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #4A3525;
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        .fg input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            font-size: 15px;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .fg input:focus {
+            outline: 2px solid #E97424; 
+            border-color: transparent;
+        }
+
+        .as {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #F9F8F3;
+            border-radius: 8px;
+        }
+
+        .cg {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cg input {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .b-submit {
+            width: 100%;
+            background-color: #4A3525; 
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .b-submit:hover {
+            background-color: #E97424; 
+        }
+
+        .af {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .af a {
+            color: #9AB3DE; 
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .af a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="ac">
+        <header class="ah">
+            <h1>Play Ground</h1>
+            <p>새로운 플레이그라운드를 시작해보세요!</p>
+        </header>
+
+        <form action="#" method="POST">
+            <section class="fg">
+                <label for="userId">아이디</label>
+                <input type="text" id="userId" placeholder="아이디를 입력해주세요" required>
+            </section>
+
+            <section class="fg">
+                <label for="userPwd">비밀번호</label>
+                <input type="password" id="userPwd" placeholder="영문, 숫자 포함 8자 이상" required>
+            </section>
+
+            <section class="fg">
+                <label for="userPwdConfirm">비밀번호 확인</label>
+                <input type="password" id="userPwdConfirm" placeholder="비밀번호를 한번 더 입력해주세요" required>
+            </section>
+
+            <section class="fg">
+                <label for="userName">이름</label>
+                <input type="text" id="userName" placeholder="이름을 입력해주세요" required>
+            </section>
+
+            <div class="as">
+                <label class="cg">
+                    <input type="checkbox" required>
+                    <span>[필수] 이용약관 및 개인정보 처리방침 동의</span>
+                </label>
+            </div>
+
+            <button type="submit" class="b-submit">가입하기</button>
+        </form>
+
+        <footer class="af">
+            <span>이미 계정이 있으신가요?</span>
+            <a href="playground.html"><div>로그인하기</div></a>
+        </footer>
+    </main>
+
+</body>
+</html>

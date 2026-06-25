@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Play Ground</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '맑은 고딕', 돋움, sans-serif;
+        }
+
+        body {
+            background-color: #F3EFE0; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .mh {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+
+        .mh h1 {
+            font-size: 54px;
+            color: #E97424; 
+            font-style: italic;
+            font-weight: 900;
+            display: inline-block;
+        }
+
+        .ct {
+            display: grid;
+            grid-template-columns: 250px 570px 320px; 
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            min-width: 1200px; 
+            justify-content: center; 
+            align-items: stretch; 
+        }
+
+        .sb {
+            background-color: #4A3525; 
+            color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 100px 100px 80px 80px; 
+            text-align: center;
+            width: 250px;
+        }
+
+        .sbs {
+            margin-bottom: 40px;
+        }
+
+        .sbs h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .sbs ul {
+            list-style: none;
+        }
+
+        .sbs li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        .sbs li:hover {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .mc {
+            display: flex;
+            flex-direction: column;
+            width: 570px; 
+            height: 100%; 
+        }
+
+        .ns {
+            display: none;
+            flex-direction: column;
+            background-color: #D3D3D3; 
+            padding: 40px 30px;
+            width: 100%;  
+            height: 100%; 
+            border-radius: 4px;
+        }
+
+        .ns h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #000000;
+            text-align: center; 
+        }
+
+        .nt {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .nt th {
+            font-weight: bold;
+            padding-bottom: 20px;
+            color: #000;
+            text-align: center; 
+            border-bottom: 2px solid #b0b0b0; 
+        }
+
+        .nt th.t-th {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .nt td {
+            padding: 15px 0;
+            color: #000;
+            vertical-align: middle;
+            text-align: center; 
+            border-bottom: 1px solid #c0c0c0; 
+        }
+
+        .nt td.t {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .b-wrap {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .b-w {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #b0b0b0;
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .rsb {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+        }
+
+        .lb {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .lb input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .lf {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .b-login {
+            flex: 1;
+            background-color: #9AB3DE; 
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .b-signup {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .pc {
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .pc h3 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .pc .p-price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .bl {
+            text-align: left;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .bl li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .b-sub {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .p-pass {
+            background-color: #ffffff; 
+        }
+        .s-yellow {
+            background-color: #FFF9C4; 
+            color: #000;
+        }
+
+        .g-pass {
+            background-color: #F99DA4; 
+        }
+        .s-dark {
+            background-color: #2F3E50; 
+            color: #ffffff;
+        }
+
+        a, .tab-link {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        a:visited {
+            color: inherit;
+        }
+        a:focus, a:active, .tab-link:focus {
+            outline: none;
+        }
+
+        input[name="main-tab"] {
+            display: none;
+        }
+
+        #tab-notice:checked ~ .ct .mc #box-notice,
+        #tab-thief:checked ~ .ct .mc #box-thief,
+        #tab-tail:checked ~ .ct .mc #box-tail,
+        #tab-plogging:checked ~ .ct .mc #box-plogging,
+        #tab-running:checked ~ .ct .mc #box-running,
+        #tab-seoul:checked ~ .ct .mc #box-seoul,
+        #tab-gyeonggi:checked ~ .ct .mc #box-gyeonggi,
+        #tab-chungcheong:checked ~ .ct .mc #box-chungcheong,
+        #tab-Gyeongbuk:checked ~ .ct .mc #box-Gyeongbuk,
+        #tab-Gyeongnam:checked ~ .ct .mc #box-Gyeongnam,
+        #tab-Jeolla:checked ~ .ct .mc #box-Jeolla,
+        #tab-Gangwon:checked ~ .ct .mc #box-Gangwon,
+        #tab-Jeju:checked ~ .ct .mc #box-Jeju  {
+            display: flex;
+        }
+
+        #tab-thief:checked ~ .ct .sb [for="tab-thief"],
+        #tab-tail:checked ~ .ct .sb [for="tab-tail"],
+        #tab-plogging:checked ~ .ct .sb [for="tab-plogging"],
+        #tab-running:checked ~ .ct .sb [for="tab-running"],
+        #tab-seoul:checked ~ .ct .sb [for="tab-seoul"],
+        #tab-gyeonggi:checked ~ .ct .sb [for="tab-gyeonggi"],
+        #tab-chungcheong:checked ~ .ct .sb [for="tab-chungcheong"],
+        #tab-Gyeongbuk:checked ~ .ct .sb [for="tab-Gyeongbuk"],
+        #tab-Gyeongnam:checked ~ .ct .sb [for="tab-Gyeongnam"],
+        #tab-Jeolla:checked ~ .ct .sb [for="tab-Jeolla"],
+        #tab-Gangwon:checked ~ .ct .sb [for="tab-Gangwon"],
+        #tab-Jeju:checked ~ .ct .sb [for="tab-Jeju"] {
+            opacity: 1;
+            font-weight: bold;
+            color: #E97424;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="radio" id="tab-notice" name="main-tab" checked>
+    <input type="radio" id="tab-thief" name="main-tab">
+    <input type="radio" id="tab-tail" name="main-tab">
+    <input type="radio" id="tab-plogging" name="main-tab">
+    <input type="radio" id="tab-running" name="main-tab">
+    <input type="radio" id="tab-seoul" name="main-tab">
+    <input type="radio" id="tab-gyeonggi" name="main-tab">
+    <input type="radio" id="tab-chungcheong" name="main-tab">
+    <input type="radio" id="tab-Gyeongbuk" name="main-tab">
+    <input type="radio" id="tab-Gyeongnam" name="main-tab">
+    <input type="radio" id="tab-Jeolla" name="main-tab">
+    <input type="radio" id="tab-Gangwon" name="main-tab">
+    <input type="radio" id="tab-Jeju" name="main-tab">
+
+    <header class="mh">
+        <label for="tab-notice" style="cursor: pointer;"><h1>Play Ground</h1></label>
+    </header>
+    
+    <div class="ct">
+        <aside class="sb">
+            <section class="sbs">
+                <h2>활동 종목</h2>
+                <nav>
+                    <ul>
+                        <li><label for="tab-thief" class="tab-link">경찰과 도둑</label></li>
+                        <li><label for="tab-tail" class="tab-link">꼬리잡기</label></li>
+                        <li><label for="tab-plogging" class="tab-link">플로깅</label></li>
+                        <li><label for="tab-running" class="tab-link">러닝</label></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="sbs">
+                <h2>지역</h2>
+                <nav>
+                    <ul>
+                        <li><label for="tab-seoul" class="tab-link">서울</label></li>
+                        <li><label for="tab-gyeonggi" class="tab-link">경기/인천</label></li>
+                        <li><label for="tab-chungcheong" class="tab-link">충청/대전/세종</label></li>
+                        <li><label for="tab-Gyeongbuk" class="tab-link">경북/대구</label></li>
+                        <li><label for="tab-Gyeongnam" class="tab-link">경남/울산/부산</label></li>
+                        <li><label for="tab-Jeolla" class="tab-link">전라/광주</label></li>
+                        <li><label for="tab-Gangwon" class="tab-link">강원</label></li>
+                        <li><label for="tab-Jeju" class="tab-link">제주</label></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+
+        <main class="mc">
+            <section class="ns" id="box-notice">
+                <h2>공지사항</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 15%;">작성자</th>
+                            <th class="t-th" style="width: 70%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>000</td>
+                            <td>운영자</td>
+                            <td class="t">play ground 시작~~~하겠습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>운영자</td>
+                            <td class="t">play ground 구독 안내</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>운영자</td>
+                            <td class="t">[필독공지] 그라운드장 예약 문의 안내</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-thief">
+                <h2>경찰과 도둑</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-tail">
+                <h2>꼬리잡기</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-plogging">
+                <h2>플로깅 공유</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-running">
+                <h2>러닝 매칭</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-seoul">
+                <h2>서울 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-gyeonggi">
+                <h2>경기/인천 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-chungcheong">
+                <h2>충청/대전/세종 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-Gyeongbuk">
+                <h2>경북/대구 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-Gyeongnam">
+                <h2>경남/울산/부산 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-Jeolla">
+                <h2>전라/광주 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-Gangwon">
+                <h2>강원 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+
+            <section class="ns" id="box-Jeju">
+                <h2>제주 그라운드</h2>
+                <table class="nt">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">글번호</th>
+                            <th style="width: 20%;">작성자</th>
+                            <th class="t-th" style="width: 65%; padding-left: 20px;">제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="b-wrap">
+                    <button class="b-w">글쓰기</button>
+                </div>
+            </section>
+        </main>
+
+        <aside class="rsb">
+            <div class="lb">
+                <input type="text" placeholder="아이디">
+                <input type="password" placeholder="비밀번호">
+                <div class="lf">
+                    <button class="b-login">로그인</button>
+                    <a href="signup.html" class="b-signup">회원가입</a>
+                </div>
+            </div>
+
+            <article class="pc p-pass">
+                <h3>🎁play pass</h3>
+                <p class="p-price">9900/month</p>
+                <ul class="bl">
+                    <li>🏷️ 이름표 떼기용 전용 스티커 & 패치 대여</li>
+                    <li>👮 경찰과 도둑 테마 코스프레 의상 지원</li>
+                    <li>🧹 플로깅용 생분해 비닐 & 집게 세트 제공</li>
+                </ul>
+                <a href="playpass_checkout.html"><button class="b-sub s-yellow">sub</button></a>
+            </article>
+
+            <article class="pc g-pass">
+                <h3>🎫ground pass</h3>
+                <p class="p-price">24900/month</p>
+                <ul class="bl">
+                    <li>⚡ 공간 및 시간 자유 이용권</li>
+                    <li>🤝 스마트 대행 서비스</li>
+                    <li>🛠️ 프리미엄 액티비티 키트</li>
+                </ul>
+                <a href="groundpass_checkout.html"><button class="b-sub s-dark">sub</button></a>
+            </article>
+        </aside>
+    </div>
+
+</body>
+</html>

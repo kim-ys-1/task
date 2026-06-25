@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Play Ground - checkout(play pass)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '맑은 고딕', 돋움, sans-serif;
+        }
+
+        body {
+            background-color: #F3EFE0; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .mh {
+            width: 100%;
+            max-width: 920px;
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+
+        .mh h1 {
+            font-size: 54px;
+            color: #E97424; 
+            font-style: italic;
+            font-weight: 900;
+            display: inline-block;
+        }
+
+        .ct {
+            display: grid;
+            grid-template-columns: 570px 320px; 
+            gap: 30px;
+            width: 100%;
+            max-width: 920px;
+            min-width: 920px; 
+            justify-content: center; 
+            align-items: stretch;
+        }
+
+        .mc {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 570px;
+        }
+
+        .pmc {
+            background-color: #ebeb87d3;
+            padding: 40px 30px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .pmc h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #F3EFE0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .sib {
+            background-color: #ffffff; 
+            padding: 25px;
+            border-radius: 4px;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 3px solid #4A3525; 
+        }
+
+        .sib h3 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .sib .p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .mg {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mi {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .mi input[type="radio"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .rsb {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+        }
+
+        .sb {
+            background-color: #4A3525; 
+            color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 4px;
+        }
+
+        .sb h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .sr {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .sr.t {
+            font-size: 22px;
+            font-weight: bold;
+            color: #FFF9C4; 
+            border-top: 1px dashed rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 15px;
+            opacity: 1;
+        }
+
+        .b-pay {
+            width: 100%;
+            padding: 16px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #E97424; 
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .b-pay:hover {
+            background-color: #d16219;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="mh">
+        <h1>Play Ground</h1>
+    </header>
+    
+    <div class="ct">
+        <main class="mc">
+            <section class="pmc">
+                <h2>선택한 이용권 정보</h2>
+                <div class="sib">
+                    <h3>🎁 play pass</h3>
+                    <p class="p">9,900원 / 월</p>
+                </div>
+            </section>
+
+            <section class="pmc">
+                <h2>결제 수단 선택</h2>
+                <div class="mg">
+                    <label class="mi">
+                        <input type="radio" name="pay-method" checked>
+                        <span>신용 / 체크카드</span>
+                    </label>
+                    <label class="mi">
+                        <input type="radio" name="pay-method">
+                        <span>카카오페이 / 네이버페이</span>
+                    </label>
+                    <label class="mi">
+                        <input type="radio" name="pay-method">
+                        <span>가상계좌 무통장 입금</span>
+                    </label>
+                </div>
+            </section>
+        </main>
+
+        <aside class="rsb">
+            <article class="sb">
+                <h3>결제 금액 개요</h3>
+                <div class="sr">
+                    <span>이용권 금액</span>
+                    <span>9,900원</span>
+                </div>
+                <div class="sr">
+                    <span>부가세 (10%)</span>
+                    <span>이용권 포함</span>
+                </div>
+                <div class="sr">
+                    <span>할인 금액</span>
+                    <span>0원</span>
+                </div>
+                <div class="sr t">
+                    <span>최종 결제 금액</span>
+                    <span>9,900원</span>
+                </div>
+            </article>
+            <button class="b-pay">결제하기</button>
+        </aside>
+    </div>
+
+</body>
+</html>
